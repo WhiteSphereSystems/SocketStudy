@@ -1,2 +1,4 @@
-# SocketStudy
-This is repository that we study for socket network.
+# ソケット通信練習リポジトリ
+
+ソケット通信(Windows/Linux/Unix)について学習するためのリポジトリです。
+
