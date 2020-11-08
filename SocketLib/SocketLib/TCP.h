@@ -1,24 +1,26 @@
 #ifndef TCP_H
 #define TCP_H
 
-#include <WinSock2.h>
+#include "CommonFunc.h"
 
 class ITcp {
 public:
 	ITcp();
 	virtual ~ITcp() = 0;
-	bool initWinsock();
-	bool SocketCreate();
+	virtual bool initWinsock() = 0;
+	virtual bool SocketCreate()= 0;
 	
 };
 
-class TCP : public ITcp {
+class TCP : public ITcp, protected CommonFunc{
 public:
 	TCP();
-	virtual ~TCP();
+	~TCP();
 
 private:
-	SOCKET* sock;
+
+	virtual bool initWinsock();
+	virtual bool SocketCreate();
 };
 
 #endif // !TCP_H
