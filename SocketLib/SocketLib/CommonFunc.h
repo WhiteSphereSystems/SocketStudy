@@ -15,7 +15,8 @@ protected:
 
 	WSADATA wsaData;
 
-	struct sockaddr_in addr;
+	struct sockaddr_in my_addr;
+	struct sockaddr_in dest_addr;
 
 
 

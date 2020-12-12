@@ -17,9 +17,9 @@ int main() {
 	sockaddr_in client;
 	SOCKET Csock;
 	int len;
-	WCHAR Buff[1024];
-
-	SendData data;
+	//WCHAR Buff[1024];
+	char buff[30];
+	//SendData data;
 
 	WSAStartup(MAKEWORD(2, 0), &wsaData);
 
@@ -40,27 +40,11 @@ int main() {
 	addr.sin_addr.S_un.S_addr = INADDR_ANY;
 	bind(Csock, (struct sockaddr*)&addr, sizeof(addr));
 
-	listen(Csock, 0);
+	listen(Csock, 10);
 	len = sizeof(client);
 	Csock = accept(Csock, (struct sockaddr*)&client, &len);
 
-	printf("age\n");
-	scanf_s("%d", &data.a);
-	Sleep(1 * 1000);
-	getchar();
-	printf("name\n");
-	scanf_s("%s", &data.b, 12);
-	Sleep(1 * 1000);
-	getchar();
-	printf("mynumber\n");
-	scanf_s("%d", &data.c);
-	Sleep(1 * 1000);
-	getchar();
-
-
-
-	send(Csock, (char*)&data, sizeof(data), 0);
-
+	send(Csock,"abcd" , 5, 0);
 
 
 

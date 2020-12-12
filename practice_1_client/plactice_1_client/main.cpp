@@ -37,12 +37,14 @@ int main()
 	memset(buf, 0, sizeof(buf));
 
 
-	int n = recv(sock, (char*)&data, sizeof(data), 0);
+	//int n = recv(sock, (char*)&data, sizeof(data), 0);
+	int n = recv(sock, buf, sizeof(buf), 0);
 
 
+	printf("%s", buf);
 
-	printf("%d, %d\n", data.a, data.c);
-	printf("%s", data.b);
+	/*printf("%d, %d\n", data.a, data.c);
+	printf("%s", data.b);*/
 
 	// winsock2‚ÌI—¹ˆ—
 	WSACleanup();
